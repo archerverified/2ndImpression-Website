@@ -1,0 +1,42 @@
+/* Scroll left animation for top row */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-33.333%);
+  }
+}
+
+/* Scroll right animation for bottom row */
+@keyframes scroll-right {
+  0% {
+    transform: translateX(-33.333%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.logo-scroll-left {
+  animation: scroll-left 30s linear infinite;
+}
+
+.logo-scroll-right {
+  animation: scroll-right 30s linear infinite;
+}
+
+/* Pause on hover */
+.logo-scroll-left:hover,
+.logo-scroll-right:hover {
+  animation-play-state: paused;
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .logo-scroll-left,
+  .logo-scroll-right {
+    animation: none;
+  }
+}
+

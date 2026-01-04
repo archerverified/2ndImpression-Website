@@ -1,40 +1,101 @@
-import { useState } from 'react';
-import svgPaths from "../imports/svg-0sj01lc6ez";
+import { useState, useRef, useEffect } from 'react';
+import { Plus, Minus } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const faqs = [
   {
     question: "Why do you do this?",
-    answer: "Introduction.com is designed for founders, executives, and senior leaders in technology, finance, and related industries. We carefully review each application to ensure members can contribute to and benefit from our community."
+    answer: "We believe everyone deserves a second chance online. Our mission is to help individuals and businesses clean up their digital presence and take control of their online reputation."
   },
   {
     question: "How do you remove content from the internet?",
-    answer: "Membership includes access to exclusive events, a vetted community platform, introductions to relevant connections, priority access to resources and insights, and invitations to private dinners and gatherings."
+    answer: "We use a combination of legal DMCA takedowns, direct platform communications, and strategic de-indexing techniques to remove or suppress unwanted content from search engines and social platforms."
   },
   {
     question: "How much does it cost?",
-    answer: "Submit an application through our website. Our team reviews applications on a rolling basis, typically responding within 5-7 business days. If approved, you'll receive an invitation to complete your membership and join the community."
+    answer: "Pricing varies based on the scope and complexity of your reputation management needs. We provide custom quotes after an initial consultation. Contact us through the application form for a detailed assessment."
   },
   {
     question: "Who have you helped in the past?",
-    answer: "We host a variety of events including intimate dinners, fireside chats with industry leaders, networking sessions, workshops on relevant topics, and annual conferences. All events are designed to facilitate meaningful connections."
+    answer: "We've helped founders, executives, entrepreneurs, and businesses across industries including finance, technology, healthcare, and entertainment. Our clients range from individuals to Fortune 500 companies."
   },
   {
     question: "What are the benefits of these services?",
-    answer: "Yes, there is an annual membership fee that supports our operations, events, and community programs. Pricing details are shared during the application process. We also offer a limited number of scholarships."
+    answer: "Our services help protect your personal and professional reputation, improve search engine results, remove negative reviews, and create a positive online presence that opens doors for new opportunities."
   },
   {
     question: "How can I remove unwanted content myself?",
-    answer: "Most events are members-only to maintain an intimate atmosphere. However, we do host occasional events where members can bring qualified guests. Details are provided with each event invitation."
+    answer: "Sign up for our free newsletter to access DIY tutorials, AI tools, and expert tips for basic reputation management. For complex cases, our professional services ensure thorough and effective removal."
   },
   {
     question: "Is there anyone you do not work with?",
-    answer: "Most events are members-only to maintain an intimate atmosphere. However, we do host occasional events where members can bring qualified guests. Details are provided with each event invitation."
+    answer: "We maintain ethical standards and do not assist with removing legitimate criticism, court records, or content that serves the public interest. Each case is evaluated individually."
   },
   {
     question: "What does the process of getting started look like?",
-    answer: "Most events are members-only to maintain an intimate atmosphere. However, we do host occasional events where members can bring qualified guests. Details are provided with each event invitation."
+    answer: "Submit an application through our form, and our team will conduct an initial assessment within 2-3 business days. If approved, we'll create a customized strategy and begin work immediately."
   }
 ];
+
+function FAQItem({ faq, isOpen, onToggle, index }: { faq: { question: string; answer: string }; isOpen: boolean; onToggle: () => void; index: number }) {
+  const contentRef = useRef<HTMLDivElement>(null);
+  const [height, setHeight] = useState(0);
+
+  useEffect(() => {
+    if (contentRef.current) {
+      setHeight(isOpen ? contentRef.current.scrollHeight : 0);
+    }
+  }, [isOpen]);
+
+  return (
+    <div className="bg-white rounded-24 shadow-card relative overflow-hidden">
+      <h3>
+        <button
+          onClick={onToggle}
+          className="w-full px-md lg:px-lg py-md lg:py-lg flex items-center justify-between text-left transition-colors hover:bg-cream focus-visible:outline-2 focus-visible:outline-primary focus-visible:-outline-offset-2"
+          aria-expanded={isOpen}
+          aria-controls={`faq-answer-${index}`}
+          id={`faq-question-${index}`}
+        >
+          {/* Question - Inter Semi_Bold 18px */}
+          <span className="font-inter font-semibold text-[16px] lg:text-[18px] leading-relaxed lg:leading-[30px] pr-md text-black">
+            {faq.question}
+          </span>
+          <div className={`shrink-0 w-10 h-10 rounded-full bg-primary flex items-center justify-center transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} aria-hidden="true">
+            {isOpen ? (
+              <Minus className="w-5 h-5 text-white" />
+            ) : (
+              <Plus className="w-5 h-5 text-white" />
+            )}
+          </div>
+        </button>
+      </h3>
+      
+      <div
+        id={`faq-answer-${index}`}
+        ref={contentRef}
+        className="overflow-hidden transition-all duration-300 ease-in-out"
+        style={{ height }}
+        role="region"
+        aria-labelledby={`faq-question-${index}`}
+        hidden={!isOpen}
+      >
+        <div className="px-md lg:px-lg pb-md lg:pb-lg">
+          <div className="pt-2 border-t border-[rgba(17,17,17,0.1)]">
+            {/* Answer - Inter 18px */}
+            <p className="font-inter text-[16px] lg:text-[18px] leading-relaxed lg:leading-[28px] text-[rgba(17,17,17,0.7)] mt-md">
+              {faq.answer}
+            </p>
+          </div>
+        </div>
+      </div>
+      
+      <div className="absolute inset-0 rounded-24 pointer-events-none" aria-hidden="true">
+        <div className="absolute border border-[rgba(17,17,17,0.1)] inset-0 rounded-24" />
+      </div>
+    </div>
+  );
+}
 
 export function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -44,50 +105,34 @@ export function FAQSection() {
   };
 
   return (
-    <section className="py-24 bg-[#fffff5]">
-      <div className="max-w-[900px] mx-auto px-6">
-        <div className="text-center mb-16">
-          <p className="text-[16px] tracking-[3.2px] uppercase text-[#0048ff] mb-4 font-semibold font-['Inter:Semi_Bold',sans-serif]">
+    <section className="py-xl lg:py-[96px] bg-cream" id="faq" aria-labelledby="faq-heading">
+      <div className="max-w-[900px] mx-auto px-md">
+        <motion.div 
+          className="text-center mb-lg lg:mb-xl"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          {/* Label - Inter Semi_Bold 16px uppercase tracking 3.2px */}
+          <p className="font-inter font-semibold text-[14px] lg:text-[16px] tracking-wide uppercase text-primary mb-md">
             FAQS
           </p>
-          <h2 className="text-[52px] leading-[52px] tracking-[-2px] text-[#111] font-['RocaOne-Bl:Regular',sans-serif]">
+          {/* Heading - RocaOne-Bl 48px tracking -2px */}
+          <h2 id="faq-heading" className="font-rocaone-bl text-[36px] lg:text-[48px] leading-[1.1] tracking-tighter text-black">
             Questions & Answers
           </h2>
-        </div>
+        </motion.div>
 
-        <div className="space-y-4">
+        <div className="space-y-4" role="list">
           {faqs.map((faq, index) => (
-            <div
+            <FAQItem
               key={index}
-              className="bg-white rounded-[24px] shadow-[0px_1px_3px_0px_rgba(161,161,161,0.1),0px_6px_6px_0px_rgba(161,161,161,0.09),0px_13px_8px_0px_rgba(161,161,161,0.05),0px_23px_9px_0px_rgba(161,161,161,0.01)] relative"
-            >
-              <button
-                onClick={() => toggleFAQ(index)}
-                className="w-full px-6 py-6 flex items-center justify-between text-left transition-colors"
-              >
-                <span className="text-[20px] leading-[30px] pr-4 font-['Product_Sans:Bold',sans-serif] text-[#111]">{faq.question}</span>
-                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-[#0048ff] flex items-center justify-center">
-                  <div className="relative w-4 h-4">
-                    <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 16 16">
-                      <path d={svgPaths.p31021500} stroke="white" strokeLinecap="round" strokeWidth="2" />
-                    </svg>
-                  </div>
-                </div>
-              </button>
-              
-              {openIndex === index && (
-                <div className="px-6 pb-6">
-                  <div className="pt-2 border-t border-[rgba(17,17,17,0.1)]">
-                    <p className="text-[18px] leading-[28px] text-[rgba(17,17,17,0.7)] mt-4 font-['Inter:Regular',sans-serif]">
-                      {faq.answer}
-                    </p>
-                  </div>
-                </div>
-              )}
-              <div className="absolute inset-0 rounded-[24px] pointer-events-none">
-                <div aria-hidden="true" className="absolute border border-[rgba(17,17,17,0.1)] border-solid inset-0 rounded-[24px]" />
-              </div>
-            </div>
+              faq={faq}
+              index={index}
+              isOpen={openIndex === index}
+              onToggle={() => toggleFAQ(index)}
+            />
           ))}
         </div>
       </div>

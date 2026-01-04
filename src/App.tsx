@@ -4,21 +4,21 @@ import AnimatedTestimonials from './components/AnimatedTestimonials';
 import { BenefitsSection } from './components/BenefitsSection';
 import { ValueProposition } from './components/ValueProposition';
 import { FAQSection } from './components/FAQSection';
+import { CaseStudies } from './components/CaseStudies';
 import { CTASection } from './components/CTASection';
 import { Footer } from './components/Footer';
-import AnimatedPeople from './components/AnimatedPeople';
 import { PopupModal } from './components/PopupModal';
 
 export default function App() {
   return (
-    <div className="bg-[#fffff5] min-h-screen">
+    <div className="min-h-screen bg-cream text-black overflow-x-hidden">
       <Header />
-      <main>
+      <main id="main-content" role="main" className="max-w-[2310px] mx-auto px-md lg:px-xl">
         <HeroSection />
         <AnimatedTestimonials />
         <BenefitsSection />
         <ValueProposition />
-        <AnimatedPeople />
+        <CaseStudies />
         <FAQSection />
         <CTASection />
       </main>

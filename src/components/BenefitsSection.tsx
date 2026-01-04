@@ -1,21 +1,9 @@
-import svgPaths from "../imports/svg-67gftlgl6r";
-import svgPathsCard4 from "../imports/svg-dcdxfl6ktb";
-import svgPathsCard5 from "../imports/svg-h58flmp1jo";
-import imgImage3777 from "figma:asset/762b5626874ea5538e743a85496ad3ec4b158e58.png";
-import imgImage3778 from "figma:asset/57029559bf5fb731d3bfbf1a9a4cfa24047f7ab5.png";
-import imgImage3779 from "figma:asset/00fe4e00a08258ec8090b8fea210ba3c2c4dd3b5.png";
-import imgImage3780 from "figma:asset/d3bd3c96bc1dfaebc70c4853d298543b25860212.png";
-import imgImage3781 from "figma:asset/1841f799d3ad162712fabdc4ba2f023355cc763a.png";
-import imgImage3782 from "figma:asset/b818f88b8e326a8ce6a9ed75e897c56835eccf0a.png";
-import imgGoogleMaps from "figma:asset/0134d70d0354a0f775cb0a80559ef26bddae69f0.png";
-import imgGoogle from "figma:asset/5d85406704c3857cee7cbf3f664cfbb5f192d9df.png";
-import imgSocialMedia from "figma:asset/449f98477a94512c9adc3cebad0e29c53f0070d8.png";
-import imgArtificialIntelligence from "figma:asset/e157aa38071d3219bb18aaf02af9d343f6053203.png";
-import imgArroba from "figma:asset/59a7f1c61452d2be86e42a02b7bc54998ddcf0f5.png";
-import imgConnection from "figma:asset/6db4b4236badf0e5a41c803d967d790f89b300b0.png";
+import type { ReactNode } from 'react';
+import { motion } from 'framer-motion';
+import { AssetImage } from './AssetImage';
 
 interface BenefitCardProps {
-  icon: React.ReactNode;
+  icon: ReactNode;
   title: string;
   description: string[];
   image: string;
@@ -29,208 +17,134 @@ interface BenefitCardProps {
   };
 }
 
-function BenefitCard({ icon, title, description, image, imageConfig }: BenefitCardProps) {
+function BenefitCard({ icon, title, description, image, index = 0 }: { icon: ReactNode; title: string; description: string[]; image: string; index?: number }) {
   return (
-    <div className="basis-0 bg-white content-stretch flex flex-col grow items-start min-h-px min-w-px overflow-clip relative rounded-[24px] self-stretch shadow-[0px_1px_3px_0px_rgba(161,161,161,0.1),0px_6px_6px_0px_rgba(161,161,161,0.09),0px_13px_8px_0px_rgba(161,161,161,0.05),0px_23px_9px_0px_rgba(161,161,161,0.01)] shrink-0">
-      <div className="relative shrink-0 w-full">
-        <div className="size-full">
-          <div className="content-stretch flex flex-col gap-[3.305px] items-start p-[24px] relative w-full">
-            {/* Title with Icon */}
-            <div className="content-stretch flex gap-[8px] items-center relative shrink-0 w-full">
-              <div className="overflow-clip relative shrink-0 size-[24px]">
-                {icon}
-              </div>
-              <div className="basis-0 content-stretch flex flex-col grow items-start justify-end min-h-px min-w-px relative shrink-0">
-                <div className="flex flex-col font-['Inter:Semi_Bold',sans-serif] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[#111] text-[16px] tracking-[-0.4px] w-full">
-                  <p className="leading-[30px]">{title}</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Description */}
-            <div className="content-stretch flex flex-col items-start justify-end relative shrink-0 w-full">
-              <div className="flex flex-col font-['Inter:Medium',sans-serif] font-medium justify-center leading-[27.2px] not-italic relative shrink-0 text-[16px] text-[rgba(17,17,17,0.65)] tracking-[-0.32px] w-full">
-                {description.map((line, index) => (
-                  <p key={index} className={index < description.length - 1 ? "mb-0" : ""}>{line}</p>
-                ))}
-              </div>
-            </div>
-          </div>
+    <motion.div 
+      className="bg-white p-6 rounded-3xl shadow-multi flex flex-col items-start text-left hover:bg-cream transition-colors duration-300 group h-full border border-[rgba(17,17,17,0.1)]"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+    >
+      <div className="flex items-center gap-2 mb-4">
+        <div className="w-5 h-5 shrink-0">
+          {icon}
         </div>
+        <h3 className="font-product-sans font-bold text-[26px] text-[#111] leading-tight tracking-[-0.32px]">
+          {title}
+        </h3>
       </div>
-
-      {/* Image */}
-      <div className={`relative shrink-0 w-full ${imageConfig.containerClass || ''}`} style={{ height: imageConfig.containerHeight }}>
-        <div className="absolute pointer-events-none" style={{
-          left: imageConfig.imageLeft,
-          top: imageConfig.imageTop,
-          width: imageConfig.imageWidth,
-          height: imageConfig.imageHeight
-        }}>
-          <img alt={title} className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none size-full" src={image} />
-        </div>
+      <div className="font-product-sans text-[16px] text-[rgba(17,17,17,0.65)] leading-relaxed tracking-[-0.32px] mb-6">
+        {description.map((line, idx) => (
+          <p key={idx}>{line}</p>
+        ))}
       </div>
-
-      {/* Border */}
-      <div className="absolute inset-[0_0_0.49px_0] rounded-[24px]" data-name="Border">
-        <div aria-hidden="true" className="absolute border border-[rgba(17,17,17,0.1)] border-solid inset-0 pointer-events-none rounded-[24px]" />
+      <div className="mt-auto w-full relative h-[300px] overflow-clip">
+        <AssetImage
+          src={image}
+          alt={title}
+          className="w-full h-full object-contain"
+          loading="lazy"
+        />
       </div>
-    </div>
+    </motion.div>
   );
 }
 
 export function BenefitsSection() {
   const benefits = [
     {
-      icon: (
-        <div className="relative size-[20px]">
-          <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none size-full" src={imgGoogleMaps} />
-        </div>
-      ),
+      icon: <AssetImage alt="" className="w-full h-full object-contain" src="/assets/icon-google-maps.png" />,
       title: "Negative Review Removals (Google)",
       description: [
         "Negative Google reviews can sink your credibility fast and cost you thousands in business. We specialize in removing spam, harassment, fake, and hurtful reviews. Once removed, you'll see a boost in visibility, rankings, and money saved."
       ],
-      image: imgImage3777,
-      imageConfig: {
-        containerHeight: "300px",
-        containerClass: "overflow-clip",
-        imageLeft: "25px",
-        imageTop: "1.7px",
-        imageWidth: "367px",
-        imageHeight: "291.5px"
-      }
+      image: "/assets/Negative Review Removals (Google).png"
     },
     {
-      icon: (
-        <div className="relative size-[20px]">
-          <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none size-full" src={imgGoogle} />
-        </div>
-      ),
+      icon: <AssetImage alt="" className="w-full h-full object-contain" src="/assets/icon-google.png" />,
       title: "Search Engine \"De-Indexing\"",
       description: [
         "\"De-Indexing\" removes unwanted pages and content from search engines, putting you back in control of what shows up online. With our DMCA agents and legal teams, we remove damaging content from showing up when searched."
       ],
-      image: imgImage3778,
-      imageConfig: {
-        containerHeight: "300px",
-        imageLeft: "32px",
-        imageTop: "20.79px",
-        imageWidth: "326px",
-        imageHeight: "259px"
-      }
+      image: "/assets/Search Engine De-Indexing.png"
     },
     {
-      icon: (
-        <div className="relative size-[20px]">
-          <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none size-full" src={imgSocialMedia} />
-        </div>
-      ),
+      icon: <AssetImage alt="" className="w-full h-full object-contain" src="/assets/icon-social-media.png" />,
       title: "Social Media Content Removal",
       description: [
         "Old posts, photos, or comments that don't reflect who you are today? We work directly with platforms to get problematic content removed, helping you protect your brand and reputation with legally-binding tactics and discretion."
       ],
-      image: imgImage3779,
-      imageConfig: {
-        containerHeight: "300px",
-        imageLeft: "32px",
-        imageTop: "21.49px",
-        imageWidth: "352px",
-        imageHeight: "226px"
-      }
+      image: "/assets/Social Media Content Removal.png"
     },
     {
-      icon: (
-        <div className="relative size-[20px]">
-          <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none size-full" src={imgArtificialIntelligence} />
-        </div>
-      ),
+      icon: <AssetImage alt="" className="w-full h-full object-contain" src="/assets/icon-ai.png" />,
       title: "AI Prompt & Search Optimization",
       description: [
         "Leverage AI to optimize online search presence. From business rankings to popping up first on AI research, this service transforms how your brand is found, presented, and perceived as a source of real value in your industry."
       ],
-      image: imgImage3780,
-      imageConfig: {
-        containerHeight: "272.8px",
-        containerClass: "overflow-clip",
-        imageLeft: "22px",
-        imageTop: "27.39px",
-        imageWidth: "372px",
-        imageHeight: "218px"
-      }
+      image: "/assets/AI Prompt & Search Optimzation.png"
     },
     {
-      icon: (
-        <div className="relative size-[20px]">
-          <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none size-full" src={imgArroba} />
-        </div>
-      ),
+      icon: <AssetImage alt="" className="w-full h-full object-contain" src="/assets/icon-arroba.png" />,
       title: "Social Media Handle Acquisition",
       description: [
         "Helping you secure premium social media handles before someone else does. Whether you're launching a business or cleaning up a digital footprint, we'll make sure your name is available and protected across any major platform."
       ],
-      image: imgImage3781,
-      imageConfig: {
-        containerHeight: "300px",
-        containerClass: "overflow-clip",
-        imageLeft: "108px",
-        imageTop: "27.39px",
-        imageWidth: "200px",
-        imageHeight: "200px"
-      }
+      image: "/assets/Social Media Handle Acquisition.png"
     },
     {
-      icon: (
-        <div className="relative size-[20px]">
-          <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none size-full" src={imgConnection} />
-        </div>
-      ),
+      icon: <AssetImage alt="" className="w-full h-full object-contain" src="/assets/icon-connection.png" />,
       title: "Free Tutorials & AI Tools",
       description: [
         "Access powerful tutorials, AI tools, and expert tips trusted by leaders in the industry. From DIY review removal to AI-SEO and content clean-up, our weekly newsletter helps you stay a step ahead, all included for free when you sign up."
       ],
-      image: imgImage3782,
-      imageConfig: {
-        containerHeight: "300px",
-        imageLeft: "96px",
-        imageTop: "-2.61px",
-        imageWidth: "239px",
-        imageHeight: "264px"
-      }
+      image: "/assets/Free Tutorials & AI Tools.png"
     }
   ];
 
   return (
-    <section className="py-[72px] bg-[#fffff5]" id="benefits">
-      <div className="max-w-[1296px] mx-auto px-6">
+    <section className="py-24 bg-cream" id="benefits" aria-labelledby="benefits-heading">
+      <div className="max-w-1296 mx-auto px-6">
         {/* Header */}
-        <div className="content-stretch flex flex-col gap-[24px] items-center relative shrink-0 w-full mb-[48px]">
-          <div className="flex flex-col font-['Inter:Semi_Bold',sans-serif] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[#0048ff] text-[16px] text-nowrap tracking-[3.2px] uppercase">
-            <p className="leading-[16px]">SERVICES</p>
-          </div>
-          <div className="flex flex-col font-['RocaOne-Bl:Regular',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[52px] text-black text-center text-nowrap tracking-[-2px]">
-            <p className="leading-[52px]">Reputation Management</p>
-          </div>
-        </div>
+        <motion.div 
+          className="flex flex-col items-center text-center mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <p className="font-inter font-semibold text-primary text-[16px] tracking-wide uppercase mb-4">
+            SERVICES
+          </p>
+          <h2 id="benefits-heading" className="font-rocaone-bl text-[48px] lg:text-[52px] text-black tracking-tighter leading-[1.1]">
+            Reputation Management
+          </h2>
+        </motion.div>
 
         {/* Benefits Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[24px] mb-[48px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {benefits.map((benefit, index) => (
-            <BenefitCard key={index} {...benefit} />
+            <BenefitCard key={index} {...benefit} index={index} />
           ))}
         </div>
 
         {/* CTA Button */}
-        <div className="text-center">
-          <a className="inline-flex bg-[#0048ff] content-stretch cursor-pointer h-[56px] items-center justify-center overflow-clip px-[36px] py-[10px] relative rounded-[12px] shadow-[0px_1px_2px_0px_rgba(0,0,0,0.1),0px_3px_3px_0px_rgba(0,0,0,0.09),0px_7px_4px_0px_rgba(0,0,0,0.05),0px_12px_5px_0px_rgba(0,0,0,0.01)] shrink-0 hover:bg-[#0040dd] transition-colors" href="#apply">
-            <div className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[18px] text-center text-nowrap text-white tracking-[-0.2px] leading-[27px]">
-              Apply for Services
-            </div>
-            <div className="absolute inset-0 rounded-[12px]">
-              <div aria-hidden="true" className="absolute border border-[rgba(255,255,255,0.1)] border-solid inset-0 pointer-events-none rounded-[12px]" />
-            </div>
+        <motion.div 
+          className="text-center"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.6 }}
+        >
+          <a 
+            className="inline-flex bg-primary cursor-pointer h-xl items-center justify-center px-10 rounded-12 shadow-multi text-white font-inter font-semibold text-[20px] hover:bg-[#0040dd] transition-colors" 
+            href="https://automatedrevenue.typeform.com/to/R3joZxyS"
+            aria-label="Apply for Services"
+          >
+            Apply for Services
           </a>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -1,80 +1,95 @@
-import imgGtm3Image62 from "figma:asset/f1f997892334f0e5fecc51a87a8fb2cc74a82934.png";
-import imgImage3647 from "figma:asset/52e672056319f396f2b1bf45a03eee134d6b47d8.png";
-import imgImage3763 from "figma:asset/51f3f45b292f840e1e1d7bc4aef0a19c7e51304f.png";
+import { motion } from 'framer-motion';
+import { AssetImage } from './AssetImage';
+
+const valuePoints = [
+  "Eliminate all negativity that can harm your business",
+  "Become a key leader and have your ideas heard",
+  "Build an unmatched network faster than ever",
+  "Accelerate your business and stay on top",
+];
 
 export function ValueProposition() {
   return (
-    <section className="py-24 bg-[#fffff5]">
-      <div className="max-w-[1296px] mx-auto px-6">
+    <section className="py-24 bg-cream" id="value" aria-labelledby="value-heading">
+      <div className="max-w-1296 mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div>
-            <p className="text-[16px] tracking-[3.2px] uppercase text-[#0048ff] mb-6 font-semibold font-['Inter:Semi_Bold',sans-serif]">
+          {/* Left Content */}
+          <motion.div 
+            className="order-2 lg:order-1 lg:max-w-[881px] lg:mx-[170px] lg:px-0"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: 'easeOut' }}
+          >
+            {/* Label - Inter Semi_Bold 16px uppercase tracking 3.2px */}
+            <p className="font-inter font-semibold text-[16px] tracking-wide uppercase text-primary mb-4">
               GUARANTEED VALUE
             </p>
-            <h2 className="text-[52px] leading-[52px] tracking-[-2px] text-[#111] mb-12 font-['RocaOne-Bl:Regular',sans-serif]">
-              Less Fluff, More Results
-            </h2>
-            <ul className="space-y-5 mb-12">
-              <li className="flex items-start gap-2">
-                <div className="relative shrink-0 size-[16px] mt-[5px]">
-                  <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                    <img alt="" className="absolute h-[114.8%] left-[-7.69%] max-w-none top-[-7.65%] w-[115.38%]" src={imgImage3647} />
-                  </div>
-                </div>
-                <p className="text-[18px] leading-[27px] text-[#2b2b2b] font-['Inter:Regular',sans-serif]">Eliminate all negativity that can harm your business</p>
-              </li>
-              <li className="flex items-start gap-2">
-                <div className="relative shrink-0 size-[16px] mt-[5px]">
-                  <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                    <img alt="" className="absolute h-[114.8%] left-[-7.69%] max-w-none top-[-7.65%] w-[115.38%]" src={imgImage3647} />
-                  </div>
-                </div>
-                <p className="text-[18px] leading-[27px] text-[#2b2b2b] font-['Inter:Regular',sans-serif]">Become a key leader and have your ideas heard</p>
-              </li>
-              <li className="flex items-start gap-2">
-                <div className="relative shrink-0 size-[16px] mt-[5px]">
-                  <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                    <img alt="" className="absolute h-[114.8%] left-[-7.69%] max-w-none top-[-7.65%] w-[115.38%]" src={imgImage3647} />
-                  </div>
-                </div>
-                <p className="text-[18px] leading-[27px] text-[#2b2b2b] font-['Inter:Regular',sans-serif]">Build an unmatched network faster than ever</p>
-              </li>
-              <li className="flex items-start gap-2">
-                <div className="relative shrink-0 size-[16px] mt-[5px]">
-                  <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                    <img alt="" className="absolute h-[114.8%] left-[-7.69%] max-w-none top-[-7.65%] w-[115.38%]" src={imgImage3647} />
-                  </div>
-                </div>
-                <p className="text-[18px] leading-[27px] text-[#2b2b2b] font-['Inter:Regular',sans-serif]">Accelerate your business and stay on top</p>
-              </li>
-            </ul>
-            <a 
-              href="#apply"
-              className="inline-flex bg-[#0048ff] content-stretch cursor-pointer h-[64px] items-center justify-center overflow-clip px-[40px] py-[10px] relative rounded-[12px] shadow-[0px_1px_2px_0px_rgba(0,0,0,0.1),0px_3px_3px_0px_rgba(0,0,0,0.09),0px_7px_4px_0px_rgba(0,0,0,0.05),0px_12px_5px_0px_rgba(0,0,0,0.01)] shrink-0 hover:bg-[#0040dd] transition-colors"
-            >
-              <div className="font-['Product_Sans:Bold',sans-serif] text-[20px] leading-[30px] text-center text-nowrap text-white">
-                Apply for Services
-              </div>
-              <div className="absolute inset-0 rounded-[12px]">
-                <div aria-hidden="true" className="absolute border border-[rgba(255,255,255,0.1)] border-solid inset-0 pointer-events-none rounded-[12px]" />
-              </div>
-            </a>
-          </div>
-          
-          <div className="relative">
-            <div className="bg-[rgba(255,255,255,0)] rounded-[24px] shadow-[0px_1px_3px_0px_rgba(161,161,161,0.5),0px_6px_6px_0px_rgba(161,161,161,0.5),0px_13px_8px_0px_rgba(161,161,161,0.05),0px_23px_9px_0px_rgba(161,161,161,0.01)] overflow-hidden relative">
-              <div className="aspect-[624/530]">
-                <div className="absolute inset-0 overflow-hidden pointer-events-none px-3">
-                  <img
-                    src={imgImage3763}
-                    alt="Growth chart visualization"
-                    className="absolute h-[117.74%] left-0 max-w-none top-[-9.25%] w-full"
-                  />
-                </div>
-              </div>
-              <div className="absolute border border-[rgba(17,17,17,0.1)] border-solid inset-0 rounded-[24px]" />
+            
+            <div className="flex flex-col gap-8">
+              {/* Heading - RocaOne-Bl 48px tracking -2px */}
+              <h2 id="value-heading" className="font-rocaone-bl text-[48px] lg:text-[52px] leading-[1.1] tracking-tighter text-black">
+                Less Fluff, More Results
+              </h2>
+              <ul className="space-y-6" role="list">
+                {valuePoints.map((point, index) => (
+                  <motion.li 
+                    key={index} 
+                    className="flex items-start gap-4 group"
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                  >
+                    <div className="shrink-0 w-6 h-6 mt-1" aria-hidden="true">
+                      <AssetImage 
+                        alt="" 
+                        className="w-full h-full object-contain" 
+                        src="/assets/checkmark.png" 
+                        loading="lazy" 
+                      />
+                    </div>
+                    {/* Body - Inter 18px */}
+                    <p className="font-inter text-[18px] leading-relaxed text-[rgba(17,17,17,0.7)] group-hover:text-primary transition-colors lg:w-[1035px]">
+                      {point}
+                    </p>
+                  </motion.li>
+                ))}
+              </ul>
             </div>
-          </div>
+            
+            <motion.a 
+              href="https://automatedrevenue.typeform.com/to/R3joZxyS"
+              className="inline-flex bg-primary cursor-pointer h-xl items-center justify-center px-10 rounded-12 shadow-multi text-white font-inter font-semibold text-[20px] hover:bg-[#0040dd] transition-colors mt-12"
+              aria-label="Apply for Services"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.5 }}
+            >
+              Apply for Services
+            </motion.a>
+          </motion.div>
+          
+          {/* Right Image - Graph */}
+          <motion.div 
+            className="order-1 lg:order-2"
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
+          >
+            <div className="bg-white rounded-3xl shadow-multi overflow-hidden relative group hover:shadow-lg transition-shadow duration-300 w-full max-w-[624px] mx-auto lg:ml-auto">
+              <div className="aspect-624/538 w-full">
+                <AssetImage
+                  src="/assets/growth-graph.png"
+                  alt="Growth chart visualization"
+                  className="w-full h-full object-contain p-0"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>
