@@ -1,0 +1,17 @@
+export const LOGOS = [
+  { src: '/assets/Company Logos/Google.svg', alt: 'Google' },
+  { src: '/assets/Company Logos/Instagram.svg', alt: 'Instagram' },
+  { src: '/assets/Company Logos/YouTube.svg', alt: 'YouTube' },
+  { src: '/assets/Company Logos/TikTok.svg', alt: 'TikTok' },
+  { src: '/assets/Company Logos/Reddit.svg', alt: 'Reddit' },
+  { src: '/assets/Company Logos/Yelp.svg', alt: 'Yelp' },
+  { src: '/assets/Company Logos/Telegram.svg', alt: 'Telegram' },
+  { src: '/assets/Company Logos/Threads.svg', alt: 'Threads' },
+  { src: '/assets/Company Logos/LinkedIn.svg', alt: 'LinkedIn' },
+  { src: '/assets/Company Logos/Pinterest.svg', alt: 'Pinterest' },
+  { src: '/assets/Company Logos/X.png', alt: 'X' },
+  { src: '/assets/Company Logos/Facebook.svg', alt: 'Facebook' },
+  { src: '/assets/Company Logos/Trustpilot.svg', alt: 'Trustpilot' },
+  { src: '/assets/Company Logos/Airbnb.svg', alt: 'Airbnb' },
+  { src: '/assets/Company Logos/1stimpression.svg', alt: '1st Impression' },
+];
