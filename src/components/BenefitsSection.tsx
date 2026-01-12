@@ -14,31 +14,31 @@ interface ServiceCardProps {
 
 function ServiceCard({ title, description, buttonLabel, buttonWidthClassName, children, onButtonClick }: ServiceCardProps) {
   return (
-    <div className="bg-white rounded-[16px] sm:rounded-[24px] shadow-[0px_1px_3px_0px_rgba(161,161,161,0.1),0px_6px_6px_0px_rgba(161,161,161,0.09),0px_13px_8px_0px_rgba(161,161,161,0.05),0px_23px_9px_0px_rgba(161,161,161,0.01)] overflow-hidden relative min-h-[500px] sm:min-h-[580px] lg:h-[648px] w-full lg:w-[416px] pb-[100px] sm:pb-[110px]">
-      <div className="px-4 sm:px-[24px] pt-4 sm:pt-[24px]">
-        <h3 className="font-['Product_Sans_Medium'] font-medium text-[18px] sm:text-[20px] text-[#111] tracking-[-0.32px] leading-[25px] sm:leading-[27.2px] text-center">
+    <div className="bg-white rounded-[24px] shadow-[0px_1px_3px_0px_rgba(161,161,161,0.1),0px_6px_6px_0px_rgba(161,161,161,0.09),0px_13px_8px_0px_rgba(161,161,161,0.05),0px_23px_9px_0px_rgba(161,161,161,0.01)] overflow-hidden relative h-[648px] w-full lg:w-[416px]">
+      <div className="px-[24px] pt-[24px]">
+        <h3 className="font-['Product_Sans_Medium'] font-medium text-[20px] text-[#111] tracking-[-0.32px] leading-[27.2px] text-center">
           {title}
         </h3>
-        <p className="mt-[8px] text-[14px] sm:text-[16px] leading-[24px] sm:leading-[27.2px] tracking-[-0.32px] text-[rgba(17,17,17,0.65)] font-['Product Sans Medium',sans-serif] font-medium text-center sm:text-left">
+        <p className="mt-[8px] text-[16px] leading-[27.2px] tracking-[-0.32px] text-[rgba(17,17,17,0.65)] font-['Product Sans Medium',sans-serif] font-medium">
           {description}
         </p>
       </div>
 
       <div className="mt-[14px]">{children}</div>
 
-      <div className="absolute bottom-[24px] sm:bottom-[36px] left-1/2 -translate-x-1/2 w-[calc(100%-32px)] sm:w-auto">
+      <div className="absolute bottom-[36px] left-1/2 -translate-x-1/2">
         <button
           type="button"
           onClick={onButtonClick}
-          className={`inline-flex bg-[#0048ff] h-[48px] sm:h-[56px] items-center justify-center rounded-[10px] sm:rounded-[12px] hover:bg-[#0040dd] transition-colors cursor-pointer w-full sm:${buttonWidthClassName}`}
+          className={`inline-flex bg-[#0048ff] h-[56px] items-center justify-center rounded-[12px] hover:bg-[#0040dd] transition-colors cursor-pointer ${buttonWidthClassName}`}
         >
-          <span className="font-['Product Sans',sans-serif] font-bold text-[16px] sm:text-[20px] leading-[30px] text-white">
+          <span className="font-['Product Sans',sans-serif] font-bold text-[20px] leading-[30px] text-white">
             {buttonLabel}
           </span>
         </button>
       </div>
 
-      <div className="absolute border border-[rgba(17,17,17,0.1)] inset-0 rounded-[16px] sm:rounded-[24px] pointer-events-none" />
+      <div className="absolute border border-[rgba(17,17,17,0.1)] inset-0 rounded-[24px] pointer-events-none" />
     </div>
   );
 }
@@ -56,20 +56,20 @@ export function BenefitsSection() {
 
   return (
     <>
-      <section id="services" className="py-[48px] sm:py-[72px] bg-[#fffff5]">
-        <div className="max-w-[1296px] mx-auto px-4 sm:px-6">
+      <section id="services" className="py-[72px] bg-[#fffff5]">
+        <div className="max-w-[1296px] mx-auto px-6">
           {/* Header */}
-          <div className="flex flex-col gap-[16px] sm:gap-[24px] items-center mb-[32px] sm:mb-[48px]">
-            <p className="font-['Inter',sans-serif] font-semibold text-[#0048ff] text-[12px] sm:text-[16px] tracking-[2px] sm:tracking-[3.2px] uppercase">
+          <div className="flex flex-col gap-[24px] items-center mb-[48px]">
+            <p className="font-['Inter',sans-serif] font-semibold text-[#0048ff] text-[16px] tracking-[3.2px] uppercase">
               PROFESSIONAL SERVICES
             </p>
-            <h2 className="font-['RocaOne-Bl',sans-serif] text-[32px] sm:text-[42px] lg:text-[52px] text-black text-center tracking-[-1px] sm:tracking-[-2px] leading-[36px] sm:leading-[46px] lg:leading-[52px]">
+            <h2 className="font-['RocaOne-Bl',sans-serif] text-[52px] text-black text-center tracking-[-2px] leading-[52px]">
               Reputation Management
             </h2>
           </div>
 
           {/* Services Grid - 3 Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[16px] sm:gap-[24px]">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[24px]">
             {/* Card 1: Negative Review Removals */}
             <ServiceCard
               title="Negative Review Removals"
@@ -78,11 +78,11 @@ export function BenefitsSection() {
               buttonWidthClassName="w-[233px]"
               onButtonClick={() => openPopup('review')}
             >
-              <div className="px-4 sm:px-[36px] pt-[14px] flex flex-col gap-[8px] sm:gap-[12px]">
-                <Video src={VIDEO.services.gmb} containerClassName="w-full sm:w-[344px] h-[56px] sm:h-[68px] overflow-hidden mx-auto" className="w-full h-full object-contain" />
-                <Video src={VIDEO.services.gmail} containerClassName="w-full sm:w-[344px] h-[56px] sm:h-[68px] overflow-hidden mx-auto" className="w-full h-full object-contain" />
-                <Video src={VIDEO.services.google} containerClassName="w-full sm:w-[344px] h-[56px] sm:h-[68px] overflow-hidden mx-auto" className="w-full h-full object-contain" />
-                <Video src={VIDEO.services.notification} containerClassName="w-full sm:w-[344px] h-[56px] sm:h-[68px] overflow-hidden mx-auto" className="w-full h-full object-contain" />
+              <div className="px-[36px] pt-[14px] flex flex-col gap-[12px]">
+                <Video src={VIDEO.services.gmb} containerClassName="w-[344px] h-[68px] overflow-hidden" className="w-full h-full object-contain" />
+                <Video src={VIDEO.services.gmail} containerClassName="w-[344px] h-[68px] overflow-hidden" className="w-full h-full object-contain" />
+                <Video src={VIDEO.services.google} containerClassName="w-[344px] h-[68px] overflow-hidden" className="w-full h-full object-contain" />
+                <Video src={VIDEO.services.notification} containerClassName="w-[344px] h-[68px] overflow-hidden" className="w-full h-full object-contain" />
               </div>
             </ServiceCard>
 
@@ -95,7 +95,7 @@ export function BenefitsSection() {
               onButtonClick={() => openPopup('link')}
             >
               <div className="pt-[14px]">
-                <Video src={VIDEO.services.webScreens} containerClassName="w-full h-[240px] sm:h-[312px] overflow-hidden" className="w-full h-full object-cover" />
+                <Video src={VIDEO.services.webScreens} containerClassName="w-full h-[312px] overflow-hidden" className="w-full h-full object-cover" />
               </div>
             </ServiceCard>
 
@@ -109,14 +109,14 @@ export function BenefitsSection() {
             >
               <div className="pt-[14px] flex flex-col items-center">
                 {/* AVAILABLE PLATFORMS label - centered above videos */}
-                <p className="font-['Inter',sans-serif] font-semibold text-[12px] sm:text-[16px] tracking-[2px] sm:tracking-[3.2px] uppercase text-[#a2a2a2] mb-[12px] sm:mb-[16px] text-center">
+                <p className="font-['Inter',sans-serif] font-semibold text-[16px] tracking-[3.2px] uppercase text-[#a2a2a2] mb-[16px] text-center">
                   AVAILABLE PLATFORMS
                 </p>
-                <div className="grid grid-cols-2 gap-0 max-w-[280px] sm:max-w-none">
-                  <Video src={VIDEO.services.tiktok} containerClassName="w-[100px] sm:w-[134px] h-[100px] sm:h-[134px] overflow-hidden" className="w-full h-full object-cover" />
-                  <Video src={VIDEO.services.instagram} containerClassName="w-[100px] sm:w-[133px] h-[100px] sm:h-[133px] overflow-hidden" className="w-full h-full object-cover" />
-                  <Video src={VIDEO.services.youtube} containerClassName="w-[100px] sm:w-[133px] h-[100px] sm:h-[134px] overflow-hidden" className="w-full h-full object-cover" />
-                  <Video src={VIDEO.services.facebook} containerClassName="w-[100px] sm:w-[134px] h-[100px] sm:h-[134px] overflow-hidden" className="w-full h-full object-cover" />
+                <div className="grid grid-cols-2 gap-0">
+                  <Video src={VIDEO.services.tiktok} containerClassName="w-[134px] h-[134px] overflow-hidden" className="w-full h-full object-cover" />
+                  <Video src={VIDEO.services.instagram} containerClassName="w-[133px] h-[133px] overflow-hidden" className="w-full h-full object-cover" />
+                  <Video src={VIDEO.services.youtube} containerClassName="w-[133px] h-[134px] overflow-hidden" className="w-full h-full object-cover" />
+                  <Video src={VIDEO.services.facebook} containerClassName="w-[134px] h-[134px] overflow-hidden" className="w-full h-full object-cover" />
                 </div>
               </div>
             </ServiceCard>
