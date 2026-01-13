@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { Video } from './Video';
-import { VIDEO } from '../data/videoAssets';
+import { LottieAnimation } from './LottieAnimation';
+import { LOTTIE } from '../data/videoAssets';
 import { ServicePopupModal, type ServiceType } from './ServicePopupModal';
 
 interface ServiceCardProps {
@@ -79,10 +79,10 @@ export function BenefitsSection() {
               onButtonClick={() => openPopup('review')}
             >
               <div className="px-[36px] pt-[14px] flex flex-col gap-[12px]">
-                <Video src={VIDEO.services.gmb} containerClassName="w-[344px] h-[68px] overflow-hidden" className="w-full h-full object-contain" />
-                <Video src={VIDEO.services.gmail} containerClassName="w-[344px] h-[68px] overflow-hidden" className="w-full h-full object-contain" />
-                <Video src={VIDEO.services.google} containerClassName="w-[344px] h-[68px] overflow-hidden" className="w-full h-full object-contain" />
-                <Video src={VIDEO.services.notification} containerClassName="w-[344px] h-[68px] overflow-hidden" className="w-full h-full object-contain" />
+                <LottieAnimation src={LOTTIE.services.gmb} containerClassName="w-[344px] h-[68px] overflow-hidden" className="w-full h-full object-contain" />
+                <LottieAnimation src={LOTTIE.services.gmail} containerClassName="w-[344px] h-[68px] overflow-hidden" className="w-full h-full object-contain" />
+                <LottieAnimation src={LOTTIE.services.google} containerClassName="w-[344px] h-[68px] overflow-hidden" className="w-full h-full object-contain" />
+                <LottieAnimation src={LOTTIE.services.notification} containerClassName="w-[344px] h-[68px] overflow-hidden" className="w-full h-full object-contain" />
               </div>
             </ServiceCard>
 
@@ -95,7 +95,7 @@ export function BenefitsSection() {
               onButtonClick={() => openPopup('link')}
             >
               <div className="pt-[14px]">
-                <Video src={VIDEO.services.webScreens} containerClassName="w-full h-[312px] overflow-hidden" className="w-full h-full object-cover" />
+                <LottieAnimation src={LOTTIE.services.webScreens} containerClassName="w-full h-[312px] overflow-hidden" className="w-full h-full object-cover" />
               </div>
             </ServiceCard>
 
@@ -113,10 +113,10 @@ export function BenefitsSection() {
                   AVAILABLE PLATFORMS
                 </p>
                 <div className="grid grid-cols-2 gap-0">
-                  <Video src={VIDEO.services.tiktok} containerClassName="w-[134px] h-[134px] overflow-hidden" className="w-full h-full object-cover" />
-                  <Video src={VIDEO.services.instagram} containerClassName="w-[133px] h-[133px] overflow-hidden" className="w-full h-full object-cover" />
-                  <Video src={VIDEO.services.youtube} containerClassName="w-[133px] h-[134px] overflow-hidden" className="w-full h-full object-cover" />
-                  <Video src={VIDEO.services.facebook} containerClassName="w-[134px] h-[134px] overflow-hidden" className="w-full h-full object-cover" />
+                  <LottieAnimation src={LOTTIE.services.tiktok} containerClassName="w-[134px] h-[134px] overflow-hidden" className="w-full h-full object-cover" />
+                  <LottieAnimation src={LOTTIE.services.instagram} containerClassName="w-[133px] h-[133px] overflow-hidden" className="w-full h-full object-cover" />
+                  <LottieAnimation src={LOTTIE.services.youtube} containerClassName="w-[133px] h-[134px] overflow-hidden" className="w-full h-full object-cover" />
+                  <LottieAnimation src={LOTTIE.services.facebook} containerClassName="w-[134px] h-[134px] overflow-hidden" className="w-full h-full object-cover" />
                 </div>
               </div>
             </ServiceCard>
