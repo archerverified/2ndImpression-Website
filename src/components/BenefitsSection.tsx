@@ -16,7 +16,7 @@ function ServiceCard({ title, description, buttonLabel, buttonWidthClassName, ch
   return (
     <div className="bg-white rounded-[16px] sm:rounded-[24px] shadow-[0px_1px_3px_0px_rgba(161,161,161,0.1),0px_6px_6px_0px_rgba(161,161,161,0.09),0px_13px_8px_0px_rgba(161,161,161,0.05),0px_23px_9px_0px_rgba(161,161,161,0.01)] overflow-hidden relative min-h-[500px] sm:min-h-[580px] lg:h-[648px] w-full lg:w-[416px] pb-[100px] sm:pb-[110px]">
       <div className="px-4 sm:px-[24px] pt-4 sm:pt-[24px]">
-        <h3 className="font-['Product_Sans_Medium'] font-medium text-[18px] sm:text-[20px] text-[#111] tracking-[-0.32px] leading-[25px] sm:leading-[27.2px] text-center">
+        <h3 className="font-['Product_Sans_Medium'] font-medium text-[17.5px] sm:text-[17.5px] text-[#111] tracking-[-0.32px] leading-[24px] sm:leading-[24px] text-center">
           {title}
         </h3>
         <p className="mt-[8px] text-[14px] sm:text-[16px] leading-[24px] sm:leading-[27.2px] tracking-[-0.32px] text-[rgba(17,17,17,0.65)] font-['Product Sans Medium',sans-serif] font-medium text-center sm:text-left">
