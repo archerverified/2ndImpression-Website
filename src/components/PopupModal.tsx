@@ -72,7 +72,7 @@ export function PopupModal() {
         <div className="relative z-10 bg-white rounded-[16px] sm:rounded-[24px] shadow-[0px_8px_24px_0px_rgba(149,157,165,0.2)] w-full max-w-[500px] max-h-[90vh] overflow-y-auto p-5 sm:p-8 border-[2px] sm:border-[3px] border-[rgba(17,17,17,0.1)]">
           {/* Header */}
           <div className="mb-4 sm:mb-6">
-            <h2 id="confirmation-title" className="font-['RocaOne-Bl',sans-serif] text-[20px] sm:text-[24px] text-[#0048ff] mb-3 sm:mb-4">
+            <h2 id="confirmation-title" className="font-['RocaOne-Bl',sans-serif] text-[17.5px] sm:text-[24px] text-[#0048ff] mb-3 sm:mb-4">
               Archer says
             </h2>
             

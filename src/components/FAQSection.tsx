@@ -82,7 +82,7 @@ export function FAQSection() {
                 onClick={() => toggleFAQ(index)}
                 className="w-full px-6 py-6 flex items-center justify-between text-left transition-colors"
               >
-                <span className="text-[20px] leading-[30px] pr-4 font-['Product_Sans',sans-serif] font-bold text-[#111]">{faq.question}</span>
+                <span className="text-[17.5px] leading-[30px] pr-4 font-['Product_Sans',sans-serif] font-bold text-[#111]">{faq.question}</span>
                 <div className="flex-shrink-0 w-10 h-10 rounded-full bg-[#0048ff] flex items-center justify-center">
                   <div className="relative w-4 h-4">
                     <AccordionIcon open={openIndex === index} />
@@ -114,7 +114,7 @@ export function FAQSection() {
             rel="noopener noreferrer"
             className="inline-flex bg-[#0048ff] h-[64px] items-center justify-center px-[40px] rounded-[12px] shadow-[0px_1px_2px_0px_rgba(0,0,0,0.1),0px_3px_3px_0px_rgba(0,0,0,0.09),0px_7px_4px_0px_rgba(0,0,0,0.05),0px_12px_5px_0px_rgba(0,0,0,0.01)] hover:bg-[#0040dd] transition-colors"
           >
-            <span className="font-['Product_Sans',sans-serif] font-bold text-[20px] leading-[30px] text-white">
+            <span className="font-['Product_Sans',sans-serif] font-bold text-[17.5px] leading-[30px] text-white">
               Book a Free Consultation
             </span>
           </a>

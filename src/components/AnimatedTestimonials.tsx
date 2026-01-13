@@ -59,7 +59,7 @@ function TestimonialCard({ quote, name, role, avatar }: { quote: string; name: s
           </div>
         )}
         <div className="flex flex-col">
-          <p className="text-[20px] leading-[30px] text-[#111] font-['Product_Sans',sans-serif]">{name}</p>
+          <p className="text-[17.5px] leading-[30px] text-[#111] font-['Product_Sans',sans-serif]">{name}</p>
           <p className="text-[14px] leading-[21px] text-[rgba(17,17,17,0.7)] font-['Inter',sans-serif]">{role}</p>
         </div>
       </div>
@@ -189,7 +189,7 @@ export default function AnimatedTestimonials() {
                 document.querySelector('#case-studies')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
               }}
             >
-              <span className="font-['Product_Sans',sans-serif] font-bold text-[20px] leading-[24px] text-[#0048ff]">
+              <span className="font-['Product_Sans',sans-serif] font-bold text-[17.5px] leading-[24px] text-[#0048ff]">
                 See Results
               </span>
             </a>

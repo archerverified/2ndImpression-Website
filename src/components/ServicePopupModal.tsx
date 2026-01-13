@@ -177,7 +177,7 @@ export function ServicePopupModal({ service, onClose }: ServicePopupModalProps) 
             rel="noopener noreferrer"
             className="w-full bg-[#0048ff] h-[48px] sm:h-[56px] rounded-[10px] sm:rounded-[12px] flex items-center justify-center hover:bg-[#0040dd] transition-colors shadow-[0px_1px_2px_0px_rgba(0,0,0,0.1),0px_3px_3px_0px_rgba(0,0,0,0.09),0px_7px_4px_0px_rgba(0,0,0,0.05),0px_12px_5px_0px_rgba(0,0,0,0.01)]"
           >
-            <span className="font-['Product_Sans',sans-serif] font-bold text-[16px] sm:text-[18px] lg:text-[20px] leading-[30px] text-white">
+            <span className="font-['Product_Sans',sans-serif] font-bold text-[16px] sm:text-[18px] lg:text-[17.5px] leading-[30px] text-white">
               {content.ctaLabel}
             </span>
           </a>

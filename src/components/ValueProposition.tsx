@@ -78,7 +78,7 @@ export function ValueProposition() {
                 rel="noopener noreferrer"
                 className="inline-flex bg-[#0048ff] h-[64px] w-[185px] items-center justify-center overflow-clip rounded-[12px] shadow-[0px_1px_2px_0px_rgba(0,0,0,0.1),0px_3px_3px_0px_rgba(0,0,0,0.09),0px_7px_4px_0px_rgba(0,0,0,0.05),0px_12px_5px_0px_rgba(0,0,0,0.01)] hover:bg-[#0040dd] transition-colors"
               >
-                <span className="font-['Product_Sans',sans-serif] font-bold text-[20px] leading-[30px] text-center text-nowrap text-white">
+                <span className="font-['Product_Sans',sans-serif] font-bold text-[17.5px] leading-[30px] text-center text-nowrap text-white">
                   Start Today
                 </span>
               </a>
