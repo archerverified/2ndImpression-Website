@@ -19,23 +19,3 @@ export const VIDEO = {
   },
   value: { iMessage: v('iMessage (1).mp4') },
 } as const;
-
-// Lottie JSON animations (with transparency support)
-export const LOTTIE = {
-  lfmr: {
-    iphoneMockups: v('Animated-iPhone-mockups.json'),
-    badge: v('New-badge.json'),
-  },
-  services: {
-    gmail: v('gmail ani.json'),
-    gmb: v('gmb ani.json'),
-    google: v('google ani.json'),
-    notification: v('ashtonmessage ani.json'),
-    webScreens: v('animatedwebscreens.json'),
-    youtube: v('YouTube (1).json'),
-    tiktok: v('TikTok (1).json'),
-    instagram: v('Instagram (1).json'),
-    facebook: v('Facebook (1).json'),
-  },
-  value: { iMessage: v('iMessage (1).json') },
-} as const;
