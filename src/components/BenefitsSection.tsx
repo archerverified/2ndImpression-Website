@@ -32,7 +32,7 @@ function ServiceCard({ title, description, buttonLabel, buttonWidthClassName, ch
           onClick={onButtonClick}
           className={`inline-flex bg-[#0048ff] h-[48px] sm:h-[56px] items-center justify-center rounded-[10px] sm:rounded-[12px] hover:bg-[#0040dd] transition-colors cursor-pointer w-full sm:${buttonWidthClassName}`}
         >
-          <span className="font-['Product Sans',sans-serif] font-bold text-[16px] sm:text-[20px] leading-[30px] text-white">
+          <span className="font-['Product Sans',sans-serif] font-bold text-[16px] sm:text-[15px] leading-[30px] text-white">
             {buttonLabel}
           </span>
         </button>
@@ -91,7 +91,7 @@ export function BenefitsSection() {
               title='Search Engine "De-Indexing"'
               description='"De-Indexing" removes unwanted pages and content from search engines, putting you back in control of what shows up online. With our DMCA agents and legal teams, we remove damaging content from showing up when searched.'
               buttonLabel="Remove a Link"
-              buttonWidthClassName="w-[204px]"
+              buttonWidthClassName="w-[150px]"
               onButtonClick={() => openPopup('link')}
             >
               <div className="pt-[14px]">
