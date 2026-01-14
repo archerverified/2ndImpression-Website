@@ -379,3 +379,40 @@ textarea:focus-visible {
 [data-animate].gsap-animated {
   will-change: auto;
 }
+
+/* ========================================
+   Video Performance Optimization
+   ======================================== */
+
+/* Optimize video rendering for smooth playback */
+video {
+  /* Force GPU acceleration */
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+  
+  /* Optimize rendering */
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  
+  /* Prevent layout shifts */
+  object-fit: cover;
+  object-position: center;
+  
+  /* Smooth playback */
+  will-change: contents;
+}
+
+/* Optimize video containers for better performance */
+video {
+  /* Prevent layout shifts during loading */
+  min-height: 1px;
+}
+
+/* Reduce motion for videos when user prefers reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  video {
+    animation: none !important;
+    will-change: auto !important;
+  }
+}
