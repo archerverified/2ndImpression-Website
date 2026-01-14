@@ -63,7 +63,7 @@ export function MonitoringSection() {
                 </p>
               </li>
             </ul>
-            <div className="flex flex-col items-start">
+            <div className="flex flex-col items-start mt-[42px]">
               <a
                 href="https://forms.gle/66XJUJFUdnqyGZsd7"
                 target="_blank"

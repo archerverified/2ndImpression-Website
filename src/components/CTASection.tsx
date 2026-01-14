@@ -61,7 +61,7 @@ export function CTASection() {
 
         {/* Telegram Icon */}
         <div className="relative h-[24px] w-[24px]">
-          <a href="https://www.linkedin.com/company/introductiondotcom" className="block size-full cursor-pointer">
+          <a href="https://t.me/repmgmt" className="block size-full cursor-pointer">
             <div className="size-full overflow-clip relative">
               <img alt="Telegram" className="absolute inset-[2px] size-[20px] max-w-none object-cover" src="/assets/telegram.png" />
             </div>

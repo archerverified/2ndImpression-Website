@@ -24,6 +24,7 @@ const allLogos = [
   { name: 'Trustpilot', src: '/assets/Company Logos/Trustpilot.svg', height: 'h-8' },
   { name: 'Yelp', src: '/assets/Company Logos/Yelp.svg', height: 'h-8' },
   { name: '1st Impression', src: '/assets/Company Logos/1stimpression.svg', height: 'h-8' },
+  { name: 'Do For You Heroes', src: '/assets/Company Logos/do-for-you-heroes.png', height: 'h-8' },
 ];
 
 function shuffleArray<T>(array: T[]): T[] {
