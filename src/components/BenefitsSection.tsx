@@ -75,7 +75,7 @@ export function BenefitsSection() {
               title="Negative Review Removals"
               description="Negative reviews can sink your credibility fast and cost you thousands in business. We specialize in removing spam, harassment, fake, and hurtful reviews. Once removed, you'll see a boost in visibility, rankings, and money saved."
               buttonLabel="Remove a Review"
-              buttonWidthClassName="w-[233px]"
+              buttonWidthClassName="w-[150px]"
               onButtonClick={() => openPopup('review')}
             >
               <div className="px-4 sm:px-[36px] pt-[14px] flex flex-col gap-[8px] sm:gap-[12px]">
@@ -104,7 +104,7 @@ export function BenefitsSection() {
               title="Social Media Content Removal"
               description="Old posts, photos, or comments that don't reflect who you are today? We work directly with platforms to get problematic content removed, helping you protect your brand and reputation with legally-binding tactics and discretion."
               buttonLabel="Remove a Post"
-              buttonWidthClassName="w-[206px]"
+              buttonWidthClassName="w-[150px]"
               onButtonClick={() => openPopup('post')}
             >
               <div className="pt-[14px] flex flex-col items-center">
