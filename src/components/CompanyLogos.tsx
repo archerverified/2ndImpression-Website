@@ -25,6 +25,7 @@ const allLogos = [
   { name: 'Yelp', src: '/assets/Company Logos/Yelp.svg', height: 'h-8' },
   { name: '1st Impression', src: '/assets/Company Logos/1stimpression.svg', height: 'h-8' },
   { name: 'Do For You Heroes', src: '/assets/Company Logos/do-for-you-heroes.png', height: 'h-8' },
+  { name: 'DFY Heroes', src: '/assets/Company Logos/dfyheroes.svg', height: 'h-8' },
 ];
 
 function shuffleArray<T>(array: T[]): T[] {
@@ -66,19 +67,19 @@ export function CompanyLogos() {
   const settingsReverse = { ...settings, rtl: true } as const;
 
   return (
-    <section className="w-full py-16 relative overflow-hidden bg-[#fffff5] flex flex-col gap-8">
+    <section data-animate="logos-section" className="w-full py-16 relative overflow-hidden bg-[#fffff5] flex flex-col gap-8">
       {/* Fade overlays */}
       <div className="absolute left-0 top-0 bottom-0 w-[120px] bg-gradient-to-r from-[#fffff5] to-transparent z-10 pointer-events-none" />
       <div className="absolute right-0 top-0 bottom-0 w-[120px] bg-gradient-to-l from-[#fffff5] to-transparent z-10 pointer-events-none" />
 
-      <div className="text-center">
+      <div data-animate="logo-item" className="text-center">
         <p className="font-['Inter',sans-serif] font-semibold text-[16px] tracking-[3.2px] uppercase text-[#323232]">
           platforms we work with
         </p>
       </div>
 
       {/* Row 1 - Left to Right */}
-      <Slider {...settings} className="logo-slider">
+      <Slider {...settings} className="logo-slider" data-animate="logo-item">
         {row1.map((logo, idx) => (
           <div key={`row1-${idx}`} className="outline-none">
             <div className="flex items-center justify-center px-8 h-12">
@@ -94,7 +95,7 @@ export function CompanyLogos() {
       </Slider>
 
       {/* Row 2 - Right to Left */}
-      <Slider {...settingsReverse} className="logo-slider">
+      <Slider {...settingsReverse} className="logo-slider" data-animate="logo-item">
         {row2.map((logo, idx) => (
           <div key={`row2-${idx}`} className="outline-none">
             <div className="flex items-center justify-center px-8 h-12">

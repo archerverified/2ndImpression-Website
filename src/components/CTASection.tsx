@@ -11,7 +11,7 @@ export function CTASection() {
 
   return (
     <section className="bg-[#0048ff] py-[80px]" id="apply">
-      <div className="max-w-[1296px] mx-auto px-6 flex flex-col items-center gap-[30px]">
+      <div data-animate="cta-container" className="max-w-[1296px] mx-auto px-6 flex flex-col items-center gap-[30px]">
         {/* Newsletter Label */}
         <div className="flex flex-col items-start">
           <p className="font-['Inter',sans-serif] font-semibold text-[16px] text-white tracking-[3.2px] uppercase leading-[16px]">

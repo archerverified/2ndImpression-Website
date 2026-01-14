@@ -1,6 +1,6 @@
 export function Footer() {
   return (
-    <footer className="bg-black py-[80px] relative">
+    <footer data-animate="footer" className="bg-black py-[80px] relative">
       <div className="max-w-[1880px] mx-auto px-[20px]">
         {/* 2nd Impression Logo */}
         <div className="text-center mb-[45px]">

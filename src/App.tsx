@@ -10,8 +10,12 @@ import { FAQSection } from './components/FAQSection';
 import { CTASection } from './components/CTASection';
 import { Footer } from './components/Footer';
 import { PopupModal } from './components/PopupModal';
+import { useScrollAnimations } from './hooks/useScrollAnimations';
 
 export default function App() {
+  // Initialize GSAP scroll animations
+  useScrollAnimations();
+
   return (
     <div className="bg-[#fffff5] min-h-screen">
       <PopupModal />

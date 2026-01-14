@@ -365,3 +365,17 @@ textarea:focus-visible {
 .case-scroll-right:hover {
   animation-play-state: paused;
 }
+
+/* ========================================
+   GSAP Scroll Animation Performance Optimization
+   ======================================== */
+
+/* Optimize animated elements for better performance */
+[data-animate] {
+  will-change: transform, opacity;
+}
+
+/* Remove will-change after animation completes to free up resources */
+[data-animate].gsap-animated {
+  will-change: auto;
+}

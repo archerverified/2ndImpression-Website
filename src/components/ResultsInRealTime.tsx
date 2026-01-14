@@ -58,7 +58,7 @@ export function ResultsInRealTime() {
     <section className="py-16 lg:py-[100px] bg-[#fffff5] overflow-hidden" id="case-studies" aria-labelledby="case-studies-heading">
       <div className="max-w-[1296px] mx-auto px-6 lg:px-[72px]">
         {/* Header */}
-        <div className="text-center mb-[48px]">
+        <div data-animate="results-header" className="text-center mb-[48px]">
           <p className="font-['Inter',sans-serif] font-semibold text-[#0048ff] text-[16px] tracking-[3.2px] uppercase mb-4">
             CASE STUDIES
           </p>
@@ -69,7 +69,7 @@ export function ResultsInRealTime() {
       </div>
 
       {/* Full-width carousel container */}
-      <div className="w-full">
+      <div data-animate="results-container" className="w-full">
         {/* Top row - scrolls left */}
         <ScrollingRow images={topRowImages} direction="left" />
         

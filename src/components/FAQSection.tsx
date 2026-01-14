@@ -63,7 +63,7 @@ export function FAQSection() {
   return (
     <section className="py-24 bg-[#fffff5]">
       <div className="max-w-[900px] mx-auto px-6">
-        <div className="text-center mb-16">
+        <div data-animate="faq-header" className="text-center mb-16">
           <p className="text-[16px] tracking-[3.2px] uppercase text-[#0048ff] mb-4 font-semibold font-['Inter',sans-serif]">
             FAQS
           </p>
@@ -72,10 +72,11 @@ export function FAQSection() {
           </h2>
         </div>
 
-        <div className="space-y-4">
+        <div data-animate="faq-container" className="space-y-4">
           {faqs.map((faq, index) => (
             <div
               key={index}
+              data-animate="faq-item"
               className="bg-white rounded-[24px] shadow-[0px_1px_3px_0px_rgba(161,161,161,0.1),0px_6px_6px_0px_rgba(161,161,161,0.09),0px_13px_8px_0px_rgba(161,161,161,0.05),0px_23px_9px_0px_rgba(161,161,161,0.01)] relative"
             >
               <button

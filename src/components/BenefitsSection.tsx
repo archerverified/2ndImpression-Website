@@ -30,7 +30,7 @@ function ServiceCard({ title, description, buttonLabel, buttonWidthClassName, ch
         <button
           type="button"
           onClick={onButtonClick}
-          className={`inline-flex bg-[#0048ff] h-[48px] sm:h-[56px] items-center justify-center rounded-[10px] sm:rounded-[12px] hover:bg-[#0040dd] transition-colors cursor-pointer w-full sm:${buttonWidthClassName}`}
+          className={`flex flex-wrap overflow-hidden bg-[#0048ff] h-[48px] sm:h-[56px] items-center justify-center rounded-[10px] sm:rounded-[12px] hover:bg-[#0040dd] transition-colors cursor-pointer w-full sm:min-w-[150px] sm:flex-shrink-0`}
         >
           <span className="font-['Product Sans',sans-serif] font-bold text-[16px] sm:text-[15px] leading-[30px] text-white">
             {buttonLabel}

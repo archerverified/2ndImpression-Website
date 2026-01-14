@@ -7,7 +7,7 @@ export function HeroSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-[184px] items-center">
           {/* LEFT: Video */}
           <div className="order-2 lg:order-1 flex justify-center lg:justify-start">
-            <div className="w-full max-w-[532px] h-auto max-h-[450px] lg:w-[532px] lg:h-[450px] overflow-hidden rounded-[24px] shadow-[0px_1px_3px_0px_rgba(161,161,161,0.5),0px_6px_6px_0px_rgba(161,161,161,0.5),0px_13px_8px_0px_rgba(161,161,161,0.05),0px_23px_9px_0px_rgba(161,161,161,0.01)]">
+            <div data-animate="hero-video" className="w-full max-w-[532px] h-auto max-h-[450px] lg:w-[532px] lg:h-[450px] overflow-hidden rounded-[24px] shadow-[0px_1px_3px_0px_rgba(161,161,161,0.5),0px_6px_6px_0px_rgba(161,161,161,0.5),0px_13px_8px_0px_rgba(161,161,161,0.05),0px_23px_9px_0px_rgba(161,161,161,0.01)]">
               <video
                 className="w-full h-full object-cover"
                 src={VIDEO.hero.scrollingList}
@@ -21,7 +21,7 @@ export function HeroSection() {
           </div>
 
           {/* RIGHT: Content */}
-          <div className="order-1 lg:order-2 text-center lg:text-left">
+          <div data-animate="hero-content" className="order-1 lg:order-2 text-center lg:text-left">
             <h1 className="text-[48px] lg:text-[59px] leading-[1] tracking-[-2px] mb-6">
               <span className="font-['Product_Sans_Light',sans-serif] text-[#111]">Less Fluff,</span>
               <br />
